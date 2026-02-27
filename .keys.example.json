@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "apiUrl": "http://localhost:3000",
+    "apiKey": "sk_byc_YOUR_DEV_KEY"
+  },
+  "prod": {
+    "apiUrl": "https://api.bycrawl.com",
+    "apiKey": "sk_byc_YOUR_PROD_KEY"
+  }
+}
