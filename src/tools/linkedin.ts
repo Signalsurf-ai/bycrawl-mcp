@@ -48,6 +48,17 @@ export function registerLinkedinTools(server: McpServer) {
   );
 
   server.tool(
+    "linkedin_search_users",
+    "Search LinkedIn users/people by keyword",
+    {
+      query: z.string().describe("Search keywords (e.g. 'software engineer')"),
+      count: z.number().optional().describe("Number of results (max 100)"),
+      offset: z.number().optional().describe("Pagination offset"),
+    },
+    async ({ query, count, offset }) => bycrawlGet("/linkedin/users/search", { query, count, offset }),
+  );
+
+  server.tool(
     "linkedin_get_user",
     "Get LinkedIn user profile by username",
     { username: z.string().describe("LinkedIn username or profile URL slug") },

@@ -26,7 +26,7 @@ const EXPECTED_TOOLS = [
   "reddit_search_posts",
   "reddit_get_post",
   "reddit_get_user",
-  // LinkedIn (6)
+  // LinkedIn (7)
   "linkedin_get_company",
   "linkedin_get_company_jobs",
   "linkedin_search_jobs",
@@ -43,13 +43,18 @@ const EXPECTED_TOOLS = [
   "xiaohongshu_get_user_notes",
   "xiaohongshu_get_feed",
   "xiaohongshu_resolve_share_url",
-  // TikTok (4)
+  // LinkedIn user search (1)
+  "linkedin_search_users",
+  // TikTok (6)
   "tiktok_get_video",
   "tiktok_get_user",
   "tiktok_get_user_videos",
   "tiktok_get_category_videos",
-  // Instagram (1)
+  "tiktok_get_video_comments",
+  "tiktok_search_videos",
+  // Instagram (2)
   "instagram_search_tags",
+  "instagram_get_user",
   // System (1)
   "bycrawl_health",
 ];

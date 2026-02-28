@@ -9,4 +9,11 @@ export function registerInstagramTools(server: McpServer) {
     { query: z.string().describe("Hashtag to search") },
     async ({ query }) => bycrawlGet("/instagram/tags/search", { q: query }),
   );
+
+  server.tool(
+    "instagram_get_user",
+    "Get Instagram user profile with recent posts",
+    { username: z.string().describe("Instagram username") },
+    async ({ username }) => bycrawlGet(`/instagram/users/${username}`),
+  );
 }

@@ -39,4 +39,24 @@ export function registerTiktokTools(server: McpServer) {
     },
     async ({ category, count }) => bycrawlGet("/tiktok/categories", { category, count }),
   );
+
+  server.tool(
+    "tiktok_get_video_comments",
+    "Get comments for a TikTok video",
+    {
+      videoId: z.string().describe("TikTok video ID"),
+      cursor: z.string().optional().describe("Pagination cursor from previous response"),
+    },
+    async ({ videoId, cursor }) => bycrawlGet(`/tiktok/videos/${videoId}/comments`, { cursor }),
+  );
+
+  server.tool(
+    "tiktok_search_videos",
+    "Search TikTok videos by keyword",
+    {
+      keyword: z.string().describe("Search keyword"),
+      count: z.number().optional().describe("Number of results (max 30)"),
+    },
+    async ({ keyword, count }) => bycrawlGet("/tiktok/search", { keyword, count }),
+  );
 }

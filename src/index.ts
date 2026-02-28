@@ -10,6 +10,7 @@ import { registerXiaohongshuTools } from "./tools/xiaohongshu.js";
 import { registerTiktokTools } from "./tools/tiktok.js";
 import { registerInstagramTools } from "./tools/instagram.js";
 import { registerSystemTools } from "./tools/system.js";
+import { registerJob104Tools } from "./tools/job104.js";
 
 const server = new McpServer({
   name: "bycrawl",
@@ -24,6 +25,7 @@ registerLinkedinTools(server);
 registerXiaohongshuTools(server);
 registerTiktokTools(server);
 registerInstagramTools(server);
+registerJob104Tools(server);
 registerSystemTools(server);
 
 const transport = new StdioServerTransport();
