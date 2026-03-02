@@ -1,5 +1,6 @@
+import { getApiKey } from "./api-context.js";
+
 const API_URL = process.env.BYCRAWL_API_URL ?? "https://api.bycrawl.com";
-const API_KEY = process.env.BYCRAWL_API_KEY ?? "";
 
 type McpContent = { content: Array<{ type: "text"; text: string }> };
 
@@ -16,7 +17,7 @@ export async function bycrawlGet(
     }
 
     const res = await fetch(url, {
-      headers: { "x-api-key": API_KEY },
+      headers: { "x-api-key": getApiKey() },
       signal: AbortSignal.timeout(120_000),
     });
 

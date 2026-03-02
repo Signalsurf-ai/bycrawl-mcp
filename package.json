@@ -12,8 +12,12 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
+    "dev:http": "TRANSPORT=http tsx src/index.ts",
+    "start": "node build/index.js",
+    "start:http": "TRANSPORT=http node build/index.js",
     "test": "vitest run",
     "test:smoke": "vitest run tests/smoke.test.ts",
+    "test:smoke-http": "vitest run tests/smoke-http.test.ts",
     "test:unit": "vitest run tests/client.unit.test.ts",
     "test:integration": "vitest run tests/platforms/",
     "test:integration:slow": "INCLUDE_SLOW=true vitest run tests/platforms/",
@@ -43,9 +47,11 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
+    "express": "^5.1.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/node": "^22.13.10",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
