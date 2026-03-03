@@ -1,7 +1,7 @@
 {
   "name": "@bycrawl/mcp",
-  "version": "0.2.0",
-  "description": "MCP server for ByCrawl — query 8 social media platforms (Threads, X, Facebook, Reddit, LinkedIn, Xiaohongshu, TikTok, Instagram) from AI agents",
+  "version": "0.3.0",
+  "description": "MCP server for ByCrawl — query 9+ social media platforms (Threads, X, Facebook, Reddit, LinkedIn, Xiaohongshu, TikTok, Instagram, YouTube) from AI agents",
   "type": "module",
   "bin": {
     "bycrawl-mcp": "./build/index.js"
