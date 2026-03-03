@@ -6,8 +6,14 @@ export function registerThreadsTools(server: McpServer) {
   server.tool(
     "threads_search_posts",
     "Search Threads posts by keyword",
-    { query: z.string().describe("Search keyword"), count: z.number().optional().describe("Number of results (max 25)") },
-    async ({ query, count }) => bycrawlGet("/threads/posts/search", { q: query, count }),
+    {
+      query: z.string().describe("Search keyword"),
+      count: z.number().optional().describe("Number of results (max 25)"),
+      search_type: z.string().optional().describe("Sort order: top (default) or recent"),
+      cursor: z.string().optional().describe("Pagination cursor from previous response"),
+    },
+    async ({ query, count, search_type, cursor }) =>
+      bycrawlGet("/threads/posts/search", { q: query, count, search_type, cursor }),
   );
 
   server.tool(

@@ -23,8 +23,9 @@ export function registerYoutubeTools(server: McpServer) {
     {
       q: z.string().describe("Search query"),
       count: z.number().optional().describe("Number of results (max 20)"),
+      cursor: z.string().optional().describe("Continuation token for pagination"),
     },
-    async ({ q, count }) => bycrawlGet("/youtube/search", { q, count }),
+    async ({ q, count, cursor }) => bycrawlGet("/youtube/search", { q, count, cursor }),
   );
 
   server.tool(
