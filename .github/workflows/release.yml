@@ -26,6 +26,8 @@ jobs:
       - run: pnpm run build
 
       - run: pnpm run test:smoke
+        env:
+          BYCRAWL_API_KEY: ${{ secrets.BYCRAWL_API_KEY }}
 
       # Compare package.json version with latest git tag
       - name: Check if version changed
