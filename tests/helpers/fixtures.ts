@@ -45,3 +45,9 @@ export const tiktok = {
 export const instagram = {
   tagQuery: "photography",
 };
+
+export const youtube = {
+  videoId: "dQw4w9WgXcQ",
+  channelId: "@Google",
+  searchQuery: "technology",
+};

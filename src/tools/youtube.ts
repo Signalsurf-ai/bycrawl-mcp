@@ -39,4 +39,15 @@ export function registerYoutubeTools(server: McpServer) {
     async ({ videoId, count, cursor }) =>
       bycrawlGet(`/youtube/videos/${videoId}/comments`, { count, cursor }),
   );
+
+  server.tool(
+    "youtube_get_video_transcription",
+    "Get YouTube video transcription/subtitles with timestamps",
+    {
+      videoId: z.string().describe("YouTube video ID"),
+      language: z.string().optional().describe("Language code (e.g., en, zh-Hant, ja)"),
+    },
+    async ({ videoId, language }) =>
+      bycrawlGet(`/youtube/videos/${videoId}/transcription`, { language }),
+  );
 }

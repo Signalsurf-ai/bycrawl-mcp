@@ -52,9 +52,22 @@ const EXPECTED_TOOLS = [
   "tiktok_get_category_videos",
   "tiktok_get_video_comments",
   "tiktok_search_videos",
-  // Instagram (2)
+  // Instagram (5)
   "instagram_search_tags",
   "instagram_get_user",
+  "instagram_get_post",
+  "instagram_get_post_comments",
+  "instagram_get_user_posts",
+  // YouTube (5)
+  "youtube_get_video",
+  "youtube_get_channel",
+  "youtube_search_videos",
+  "youtube_get_video_comments",
+  "youtube_get_video_transcription",
+  // Job104 (3)
+  "job104_search_jobs",
+  "job104_get_company",
+  "job104_get_job",
   // System (1)
   "bycrawl_health",
 ];
