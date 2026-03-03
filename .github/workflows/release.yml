@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run build
+
+      - run: pnpm run test:smoke
+
+      # Compare package.json version with latest git tag
+      - name: Check if version changed
+        id: version
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          LATEST_TAG=$(git tag -l "v*" --sort=-v:refname | head -n1 || echo "")
+          echo "current=v${PACKAGE_VERSION}" >> "$GITHUB_OUTPUT"
+          if [ "v${PACKAGE_VERSION}" = "${LATEST_TAG}" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to npm
+        if: steps.version.outputs.changed == 'true'
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        if: steps.version.outputs.changed == 'true'
+        run: gh release create ${{ steps.version.outputs.current }} --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
