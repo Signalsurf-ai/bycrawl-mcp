@@ -1,5 +1,3 @@
-# @bycrawl/mcp
-
 MCP server for [ByCrawl](https://bycrawl.com) — query 8 social media platforms from AI agents like Claude and Cursor.
 
 **Supported platforms:** Threads, X/Twitter, Facebook, Reddit, LinkedIn, Xiaohongshu (RED), TikTok, Instagram
@@ -7,12 +5,6 @@ MCP server for [ByCrawl](https://bycrawl.com) — query 8 social media platforms
 ## Setup
 
 ### Claude Code
-
-```bash
-claude mcp add bycrawl -- npx -y @bycrawl/mcp
-```
-
-Then set your API key:
 
 ```bash
 claude mcp add bycrawl -e BYCRAWL_API_KEY=sk_byc_xxx -- npx -y @bycrawl/mcp
