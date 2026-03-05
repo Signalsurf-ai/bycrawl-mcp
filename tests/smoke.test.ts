@@ -45,13 +45,14 @@ const EXPECTED_TOOLS = [
   "xiaohongshu_resolve_share_url",
   // LinkedIn user search (1)
   "linkedin_search_users",
-  // TikTok (6)
+  // TikTok (7)
   "tiktok_get_video",
   "tiktok_get_user",
   "tiktok_get_user_videos",
   "tiktok_get_category_videos",
   "tiktok_get_video_comments",
   "tiktok_search_videos",
+  "tiktok_get_video_subtitles",
   // Instagram (5)
   "instagram_search_tags",
   "instagram_get_user",
