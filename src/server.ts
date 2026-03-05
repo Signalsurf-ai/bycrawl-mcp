@@ -8,6 +8,7 @@ import { registerXiaohongshuTools } from "./tools/xiaohongshu.js";
 import { registerTiktokTools } from "./tools/tiktok.js";
 import { registerInstagramTools } from "./tools/instagram.js";
 import { registerYoutubeTools } from "./tools/youtube.js";
+import { registerDcardTools } from "./tools/dcard.js";
 import { registerSystemTools } from "./tools/system.js";
 import { registerJob104Tools } from "./tools/job104.js";
 
@@ -26,6 +27,7 @@ export function createServer(): McpServer {
   registerTiktokTools(server);
   registerInstagramTools(server);
   registerYoutubeTools(server);
+  registerDcardTools(server);
   registerJob104Tools(server);
   registerSystemTools(server);
 
