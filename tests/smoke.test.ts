@@ -64,6 +64,13 @@ const EXPECTED_TOOLS = [
   "youtube_search_videos",
   "youtube_get_video_comments",
   "youtube_get_video_transcription",
+  // Dcard (6)
+  "dcard_get_post",
+  "dcard_get_post_comments",
+  "dcard_get_forum",
+  "dcard_get_forum_posts",
+  "dcard_search_posts",
+  "dcard_get_persona",
   // Job104 (3)
   "job104_search_jobs",
   "job104_get_company",
