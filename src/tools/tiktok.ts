@@ -59,4 +59,14 @@ export function registerTiktokTools(server: McpServer) {
     },
     async ({ keyword, count }) => bycrawlGet("/tiktok/search", { keyword, count }),
   );
+
+  server.tool(
+    "tiktok_get_video_subtitles",
+    "Get subtitles/captions for a TikTok video",
+    {
+      videoId: z.string().describe("TikTok video ID"),
+      language: z.string().optional().describe("Subtitle language code (e.g. en, ja, ko, zh-Hans)"),
+    },
+    async ({ videoId, language }) => bycrawlGet(`/tiktok/videos/${videoId}/subtitles`, { language }),
+  );
 }
