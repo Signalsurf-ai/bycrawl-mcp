@@ -56,6 +56,17 @@ export function registerThreadsTools(server: McpServer) {
   );
 
   server.tool(
+    "threads_get_user_replies",
+    "Get a Threads user's replies with pagination",
+    {
+      userId: z.string().describe("Numeric user ID"),
+      cursor: z.string().optional().describe("Pagination cursor"),
+      count: z.number().optional().describe("Number of results"),
+    },
+    async ({ userId, cursor, count }) => bycrawlGet(`/threads/users/${userId}/replies`, { cursor, count }),
+  );
+
+  server.tool(
     "threads_get_public_feed",
     "Get Threads public For You feed",
     {

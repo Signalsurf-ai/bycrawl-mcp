@@ -2,13 +2,14 @@ import { describe, it, expect, afterAll } from "vitest";
 import { getClient, closeClient, callTool } from "./helpers/mcp-client.js";
 
 const EXPECTED_TOOLS = [
-  // Threads (7)
+  // Threads (8)
   "threads_search_posts",
   "threads_get_post",
   "threads_get_posts_batch",
   "threads_search_users",
   "threads_get_user",
   "threads_get_user_posts",
+  "threads_get_user_replies",
   "threads_get_public_feed",
   // X (4)
   "x_get_user",
