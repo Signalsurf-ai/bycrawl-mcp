@@ -34,4 +34,14 @@ export function registerFacebookTools(server: McpServer) {
     },
     async ({ query, count, cursor }) => bycrawlGet("/facebook/posts/search", { q: query, count, cursor }),
   );
+
+  server.tool(
+    "facebook_get_post_comments",
+    "Get comments on a Facebook post by URL",
+    {
+      url: z.string().describe("Facebook post URL"),
+      cursor: z.string().optional().describe("Pagination cursor"),
+    },
+    async ({ url, cursor }) => bycrawlGet("/facebook/posts/comments", { url, cursor }),
+  );
 }
