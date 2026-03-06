@@ -16,11 +16,12 @@ const EXPECTED_TOOLS = [
   "x_get_user_posts",
   "x_get_post",
   "x_search_posts",
-  // Facebook (4)
+  // Facebook (5)
   "facebook_get_page",
   "facebook_get_page_posts",
   "facebook_get_post",
   "facebook_search_posts",
+  "facebook_get_post_comments",
   // Reddit (5)
   "reddit_get_subreddit",
   "reddit_get_subreddit_posts",
