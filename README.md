@@ -1,6 +1,6 @@
-MCP server for [ByCrawl](https://bycrawl.com) — query 8 social media platforms from AI agents like Claude and Cursor.
+MCP server for [ByCrawl](https://bycrawl.com) — query 12 social media platforms from AI agents like Claude and Cursor.
 
-**Supported platforms:** Threads, X/Twitter, Facebook, Reddit, LinkedIn, Xiaohongshu (RED), TikTok, Instagram
+**Supported platforms:** Threads, X/Twitter, Facebook, Reddit, LinkedIn, Xiaohongshu (RED), TikTok, Instagram, YouTube, Dcard, 104 Job Bank
 
 ## Setup
 
@@ -28,18 +28,21 @@ Add to your MCP config:
 }
 ```
 
-## Tools (41)
+## Tools (64)
 
 | Platform | Tools | Examples |
 |----------|-------|---------|
-| Threads | 7 | Search posts, get user profile, public feed |
+| Threads | 8 | Search posts, get user profile/replies, public feed |
 | X/Twitter | 4 | Search tweets, get user timeline |
 | Facebook | 4 | Get page, search posts, get post by URL |
 | Reddit | 5 | Get subreddit, search posts, get user |
-| LinkedIn | 6 | Get company, search jobs, get post |
+| LinkedIn | 7 | Get company, search jobs/users, get post |
 | Xiaohongshu | 9 | Search notes, get comments, resolve share URL |
-| TikTok | 4 | Get video, browse by category |
-| Instagram | 1 | Search hashtags |
+| TikTok | 7 | Get video, search, comments, subtitles, browse by category |
+| Instagram | 5 | Search hashtags, get user/post, comments, user posts |
+| YouTube | 5 | Get video/channel, search, comments, transcription |
+| Dcard | 6 | Get post/forum, search posts, comments, persona |
+| Job104 | 3 | Search jobs, get company/job details |
 | System | 1 | Health check |
 
 ## API Key
