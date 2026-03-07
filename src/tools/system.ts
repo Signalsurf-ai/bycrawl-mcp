@@ -8,4 +8,11 @@ export function registerSystemTools(server: McpServer) {
     {},
     async () => bycrawlGet("/health"),
   );
+
+  server.tool(
+    "bycrawl_get_account",
+    "Get current account info: plan, credits, subscription status, and API key details",
+    {},
+    async () => bycrawlGet("/account"),
+  );
 }
