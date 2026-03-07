@@ -44,4 +44,34 @@ export function registerFacebookTools(server: McpServer) {
     },
     async ({ url, cursor }) => bycrawlGet("/facebook/posts/comments", { url, cursor }),
   );
+
+  server.tool(
+    "facebook_marketplace_browse",
+    "Browse Facebook Marketplace listings by location and category",
+    {
+      location: z.string().optional().describe("Location slug (e.g. 'taipei', 'newyork')"),
+      category: z.string().optional().describe("Category slug (e.g. 'vehicles', 'electronics')"),
+    },
+    async ({ location, category }) => bycrawlGet("/facebook/marketplace/listings", { location, category }),
+  );
+
+  server.tool(
+    "facebook_marketplace_search",
+    "Search Facebook Marketplace listings by keyword",
+    {
+      query: z.string().describe("Search keyword"),
+      location: z.string().optional().describe("Location slug (e.g. 'taipei', 'newyork')"),
+      category: z.string().optional().describe("Category filter (e.g. 'vehicles')"),
+    },
+    async ({ query, location, category }) => bycrawlGet("/facebook/marketplace/search", { q: query, location, category }),
+  );
+
+  server.tool(
+    "facebook_marketplace_item",
+    "Get detailed Facebook Marketplace listing by ID",
+    {
+      listing_id: z.string().describe("Marketplace listing ID"),
+    },
+    async ({ listing_id }) => bycrawlGet(`/facebook/marketplace/items/${listing_id}`),
+  );
 }

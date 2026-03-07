@@ -4,7 +4,6 @@ import { registerXTools } from "./tools/x.js";
 import { registerFacebookTools } from "./tools/facebook.js";
 import { registerRedditTools } from "./tools/reddit.js";
 import { registerLinkedinTools } from "./tools/linkedin.js";
-import { registerXiaohongshuTools } from "./tools/xiaohongshu.js";
 import { registerTiktokTools } from "./tools/tiktok.js";
 import { registerInstagramTools } from "./tools/instagram.js";
 import { registerYoutubeTools } from "./tools/youtube.js";
@@ -23,7 +22,6 @@ export function createServer(): McpServer {
   registerFacebookTools(server);
   registerRedditTools(server);
   registerLinkedinTools(server);
-  registerXiaohongshuTools(server);
   registerTiktokTools(server);
   registerInstagramTools(server);
   registerYoutubeTools(server);

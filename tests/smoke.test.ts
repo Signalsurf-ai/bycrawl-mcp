@@ -16,12 +16,15 @@ const EXPECTED_TOOLS = [
   "x_get_user_posts",
   "x_get_post",
   "x_search_posts",
-  // Facebook (5)
+  // Facebook (8)
   "facebook_get_page",
   "facebook_get_page_posts",
   "facebook_get_post",
   "facebook_search_posts",
   "facebook_get_post_comments",
+  "facebook_marketplace_browse",
+  "facebook_marketplace_search",
+  "facebook_marketplace_item",
   // Reddit (5)
   "reddit_get_subreddit",
   "reddit_get_subreddit_posts",
@@ -35,16 +38,6 @@ const EXPECTED_TOOLS = [
   "linkedin_get_job",
   "linkedin_get_post",
   "linkedin_get_user",
-  // Xiaohongshu (9)
-  "xiaohongshu_search_notes",
-  "xiaohongshu_get_note",
-  "xiaohongshu_get_note_comments",
-  "xiaohongshu_get_comment_replies",
-  "xiaohongshu_search_users",
-  "xiaohongshu_get_user",
-  "xiaohongshu_get_user_notes",
-  "xiaohongshu_get_feed",
-  "xiaohongshu_resolve_share_url",
   // LinkedIn user search (1)
   "linkedin_search_users",
   // TikTok (7)
